@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&display=swap');
+
+
+$primary-color: #CC0000;
+$secondary-color: #AA0000;
+$font-color: #212121;
+$gray-color:#DADADA;
+
+%form-box{
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin: 10% auto 0;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+%form-input{
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px $gray-color;
+}
+%form-button{
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-color: $primary-color;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+    color: $font-color;
+}
+
+body{
+    .container{
+        background-image: url(https://www.cnet.com/a/img/udy5-5yTeHbT2bFJCwgZpTYQv7M=/1200x675/2019/09/25/6de216f6-f06c-4d06-a3ed-5a79bf320f55/daily-bugle.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        text-align: center;
+        .form-box{
+            @extend %form-box;
+            h2{
+                font-size: 32;
+                margin-top: 10px;
+            }
+            .form-group{
+                input{
+                    margin: 10px;
+                    width: 400px;
+                    @extend %form-input;
+                }
+                button{
+                    margin: 20px 10px;
+                    width: 400px;
+                    @extend %form-button;
+                }
+            }
+            .error-text{
+                color: $primary-color;
+            }
+        }
+    }
+    
+    header{
+        .menu{    
+            width: 80%;
+            background-color: $secondary-color;
+            -webkit-box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.7); 
+            box-shadow: 0px 10px 11px 0px rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10%;
+            ul{
+                display: inline-block;
+                li{
+                    display: inline-block;
+                    padding: 10px 20px;
+                    a{
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .login-btn{
+                display: flex;
+                a{
+                    background: white;
+                    border: none;
+                    padding: 5px 30px;
+                    margin: 4px;
+                    color: $primary-color;
+                    border-radius: 3px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    section{
+        padding: 10px 10%;
+        display: flex;
+        color: $gray-color;
+        .form-box{
+            @extend %form-box;
+            padding: 20px;
+            margin: 20px auto;
+            .form{
+                margin-top: 10px;
+                .form-group{
+                    margin: 10px 0;
+                    label{
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                    input, textarea, select{
+                        width: 1000px;
+                        @extend %form-input;
+                    }
+                    button{
+                        width: 1000px;
+                        @extend %form-button;
+                    }
+                }
+            }
+        }
+
+
+        .categories-box, .news-box {
+            padding: 20px;
+            margin: 20px auto;
+            width: 100%;
+            .header{
+                display: flex;
+                justify-content: space-between;
+                a{
+                    @extend %form-button;
+                    text-decoration: none;
+                }
+            }
+            .list{
+                margin-top: 20px;
+                width: 100%;
+                .item{
+                    @extend %form-input;
+                    margin: 10px 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    
+                }
+            }
+            .action{
+                display: flex;
+                button, a{       
+                    @extend %form-button;
+                    padding: 5px 10px;
+                    margin-left: 10px;
+                    text-decoration: none;
+                    font-size: 16;
+                }
+            }
+            table {
+                font-family: arial, sans-serif;
+                width: 100%;
+                margin-top: 20px;
+                td {
+                    border: 1px solid $gray-color;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+}

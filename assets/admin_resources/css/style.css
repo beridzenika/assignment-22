@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&display=swap");
+body .container .form-box, body section .form-box {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin: 10% auto 0;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+body .container .form-box .form-group input, body section .form-box .form .form-group input, body section .form-box .form .form-group textarea, body section .form-box .form .form-group select, body section .categories-box .list .item, body section .news-box .list .item {
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px #DADADA;
+}
+
+body .container .form-box .form-group button, body section .form-box .form .form-group button, body section .categories-box .header a, body section .news-box .header a, body section .categories-box .action button, body section .categories-box .action a, body section .news-box .action button, body section .news-box .action a {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: #CC0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lora', serif;
+  color: #212121;
+}
+
+body .container {
+  background-image: url(https://www.cnet.com/a/img/udy5-5yTeHbT2bFJCwgZpTYQv7M=/1200x675/2019/09/25/6de216f6-f06c-4d06-a3ed-5a79bf320f55/daily-bugle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  text-align: center;
+}
+
+body .container .form-box h2 {
+  font-size: 32;
+  margin-top: 10px;
+}
+
+body .container .form-box .form-group input {
+  margin: 10px;
+  width: 400px;
+}
+
+body .container .form-box .form-group button {
+  margin: 20px 10px;
+  width: 400px;
+}
+
+body .container .form-box .error-text {
+  color: #CC0000;
+}
+
+body header .menu {
+  width: 80%;
+  background-color: #AA0000;
+  -webkit-box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 10%;
+}
+
+body header .menu ul {
+  display: inline-block;
+}
+
+body header .menu ul li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+body header .menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+body header .menu .login-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header .menu .login-btn a {
+  background: white;
+  border: none;
+  padding: 5px 30px;
+  margin: 4px;
+  color: #CC0000;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+body section {
+  padding: 10px 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #DADADA;
+}
+
+body section .form-box {
+  padding: 20px;
+  margin: 20px auto;
+}
+
+body section .form-box .form {
+  margin-top: 10px;
+}
+
+body section .form-box .form .form-group {
+  margin: 10px 0;
+}
+
+body section .form-box .form .form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+body section .form-box .form .form-group input, body section .form-box .form .form-group textarea, body section .form-box .form .form-group select {
+  width: 1000px;
+}
+
+body section .form-box .form .form-group button {
+  width: 1000px;
+}
+
+body section .categories-box, body section .news-box {
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+}
+
+body section .categories-box .header, body section .news-box .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section .categories-box .header a, body section .news-box .header a {
+  text-decoration: none;
+}
+
+body section .categories-box .list, body section .news-box .list {
+  margin-top: 20px;
+  width: 100%;
+}
+
+body section .categories-box .list .item, body section .news-box .list .item {
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section .categories-box .action, body section .news-box .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body section .categories-box .action button, body section .categories-box .action a, body section .news-box .action button, body section .news-box .action a {
+  padding: 5px 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 16;
+}
+
+body section .categories-box table, body section .news-box table {
+  font-family: arial, sans-serif;
+  width: 100%;
+  margin-top: 20px;
+}
+
+body section .categories-box table td, body section .news-box table td {
+  border: 1px solid #DADADA;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */
