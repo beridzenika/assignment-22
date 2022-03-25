@@ -2,7 +2,7 @@
 
 
 $primary-color: #CC0000;
-$secondary-color: #AA0000;
+$secondary-color: #990000;
 $font-color: #212121;
 $gray-color:#DADADA;
 
@@ -24,7 +24,7 @@ $gray-color:#DADADA;
     border-radius: 5px;
     color: white;
     border: none;
-    background-color: $primary-color;
+    background-color: $secondary-color;
 }
 *{
     margin: 0;
@@ -170,6 +170,17 @@ body{
                     border: 1px solid $gray-color;
                     padding: 10px;
                 }
+            }
+        }
+        .paging{
+            text-align: center;
+            margin: 20px;
+            a{
+                text-decoration: none;
+                @extend %form-button;
+            }
+            a.active{
+                background-color: $primary-color;
             }
         }
     }

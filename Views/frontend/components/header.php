@@ -9,7 +9,7 @@
             </li>
         <?php foreach($data['categories'] as $value) { ?>
             <li>
-                <a href="?page=<?= $value['title'] ?>" <?= $pageName == $value['title'] ? 'class="active"' : '' ?> ><?= $value['title'] ?></a>
+                <a href="?page=news&category=<?= $value['id'] ?>" ><?= $value['title'] ?></a>
             </li>
         <?php } ?>
             <li>

@@ -13,12 +13,12 @@ body .container .form-box .form-group input, body section .form-box .form .form-
   border: solid 1px #DADADA;
 }
 
-body .container .form-box .form-group button, body section .form-box .form .form-group button, body section .categories-box .header a, body section .news-box .header a, body section .categories-box .action button, body section .categories-box .action a, body section .news-box .action button, body section .news-box .action a {
+body .container .form-box .form-group button, body section .form-box .form .form-group button, body section .categories-box .header a, body section .news-box .header a, body section .categories-box .action button, body section .categories-box .action a, body section .news-box .action button, body section .news-box .action a, body section .paging a {
   padding: 10px;
   border-radius: 5px;
   color: white;
   border: none;
-  background-color: #CC0000;
+  background-color: #990000;
 }
 
 * {
@@ -58,7 +58,7 @@ body .container .form-box .error-text {
 
 body header .menu {
   width: 80%;
-  background-color: #AA0000;
+  background-color: #990000;
   -webkit-box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.7);
   box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.7);
   display: -webkit-box;
@@ -190,5 +190,18 @@ body section .categories-box table, body section .news-box table {
 body section .categories-box table td, body section .news-box table td {
   border: 1px solid #DADADA;
   padding: 10px;
+}
+
+body section .paging {
+  text-align: center;
+  margin: 20px;
+}
+
+body section .paging a {
+  text-decoration: none;
+}
+
+body section .paging a.active {
+  background-color: #CC0000;
 }
 /*# sourceMappingURL=style.css.map */

@@ -24,5 +24,15 @@
             <?php } ?>
             </tbody>
         </table>
+        <div class="paging">
+        
+        <?php 
+            $size = ceil($data['cnt'] / $data['limit'] + 1);   
+            for ($i=1; $i < $size; $i++) { 
+        ?>
+            <a href="http://localhost/daily-bugle/?type=admin&page=news&p=<?= $i ?>"><?= $i ?></a>
+        <?php } ?>
+        
+        </div>
     </div>
 </section>

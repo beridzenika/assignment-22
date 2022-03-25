@@ -1,6 +1,7 @@
 <?php
 
 include 'Helpers/Session.php';
+include 'Helpers/Paging.php';
 include 'Models/Database.php';
 include 'Models/HomeModel.php';
 include 'Models/CategoriesModel.php';

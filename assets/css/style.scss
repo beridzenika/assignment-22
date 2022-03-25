@@ -5,11 +5,25 @@ $primary-color: #CC0000;
 $font-color: #212121;
 $gray-color:#DADADA;
 
-@mixin news-box {
+%news-box {
     background-color: $gray-color;
     padding: 10px;
     border-top: solid 2px $primary-color;
     display: inline-block;
+}
+
+
+%form-input{
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px $gray-color;
+}
+%form-button{
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-color: $primary-color;
 }
 
 *{
@@ -75,7 +89,7 @@ section{
                 width: 100%;
             }
             .text-box{
-                @include news-box;
+                @extend %news-box;
                 width: calc(100%-20px);
             }
         }
@@ -88,7 +102,7 @@ section{
                 margin-bottom: -5px;
             }
             .news-box{
-                @include news-box;
+                @extend %news-box;
                 padding: 0;
                 margin: 5px 0 10;
                 h3{
@@ -123,9 +137,26 @@ footer{
 }
 
 
-section{
+section.news{
     .news-container{
-        width: 1000%;
+        width: 100%;
+
+        .filter{
+            form{
+                display: flex;
+                justify-content: end;
+                .filter-box{
+                    margin-left: 10px;
+                    input{
+                        @extend %form-input;
+                    }
+                    button{
+                        @extend %form-button;
+                    }
+                }
+            }
+        }
+
         .news-box{
             h3{
                 color: $primary-color;
@@ -133,7 +164,7 @@ section{
                 font-size: 32;
             }
             .text-box{
-                @include news-box;
+                @extend %news-box;
                 padding: 0;
                 margin: 5px 0 10;
                 width: 100%;

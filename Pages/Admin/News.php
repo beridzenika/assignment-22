@@ -17,11 +17,22 @@ class News extends Page {
     }
 
     public function index() {
-        $this->data['news'] = $this->newsModel->getAll();
+        $page = isset($_GET['p']) && $_GET['p'] > 0 ? $_GET['p'] : 1 ;
+        $limit = 5;
+        $offset = ($page - 1) * $limit;
+        
+        $cnt = $this->newsModel->getCount();
+
+        $this->data['page'] = $page;
+        $this->data['limit'] = $limit;
+        $this->data['cnt'] = $cnt['cnt'];
+        $this->data['news'] = $this->newsModel->getByPaging($offset, $limit);
+
         $this->load('views/admin/news/index.php');
     }
     public function add() {
         $this->data['categories'] = $this->categoriesModel->getAll();
+
         $this->load('views/admin/news/add.php');
     }
     public function store() {
@@ -40,6 +51,7 @@ class News extends Page {
 
         $this->data['news'] = $this->newsModel->getById($id);
         $this->data['categories'] = $this->categoriesModel->getAll();
+
         $this->load('views/admin/news/edit.php');
     }
     

@@ -20,7 +20,7 @@
                 <h3><?= $value['title'] ?></h3>
                 <p><?= $value['short_text'] ?></p>
                 <div class="link-box">
-                    <a href="">READ MORE ></a>
+                <a href="?page=news&action=view&id=<?= $value['id'] ?>">READ MORE ></a>
                 </div>
             </div>
         <?php } ?>

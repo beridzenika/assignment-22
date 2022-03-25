@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,500&display=swap");
+section .video-container .video-box .text-box, section .news-container .news-boxes .news-box, section.news .news-container .news-box .text-box {
+  background-color: #DADADA;
+  padding: 10px;
+  border-top: solid 2px #CC0000;
+  display: inline-block;
+}
+
+section.news .news-container .filter form .filter-box input {
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px #DADADA;
+}
+
+section.news .news-container .filter form .filter-box button {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  background-color: #CC0000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -80,10 +101,6 @@ section .video-container .video-box iframe {
 }
 
 section .video-container .video-box .text-box {
-  background-color: #DADADA;
-  padding: 10px;
-  border-top: solid 2px #CC0000;
-  display: inline-block;
   width: calc(100%-20px);
 }
 
@@ -97,10 +114,6 @@ section .news-container .news-boxes img {
 }
 
 section .news-container .news-boxes .news-box {
-  background-color: #DADADA;
-  padding: 10px;
-  border-top: solid 2px #CC0000;
-  display: inline-block;
   padding: 0;
   margin: 5px 0 10;
 }
@@ -136,36 +149,45 @@ footer .row {
   color: white;
 }
 
-section .news-container {
-  width: 1000%;
+section.news .news-container {
+  width: 100%;
 }
 
-section .news-container .news-box h3 {
+section.news .news-container .filter form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+section.news .news-container .filter form .filter-box {
+  margin-left: 10px;
+}
+
+section.news .news-container .news-box h3 {
   color: #CC0000;
   padding: 0 10px;
   font-size: 32;
 }
 
-section .news-container .news-box .text-box {
-  background-color: #DADADA;
-  padding: 10px;
-  border-top: solid 2px #CC0000;
-  display: inline-block;
+section.news .news-container .news-box .text-box {
   padding: 0;
   margin: 5px 0 10;
   width: 100%;
 }
 
-section .news-container .news-box .text-box p {
+section.news .news-container .news-box .text-box p {
   padding: 10px;
 }
 
-section .news-container .news-box .text-box .link-box {
+section.news .news-container .news-box .text-box .link-box {
   background-color: gray;
   text-align: end;
 }
 
-section .news-container .news-box .text-box .link-box a {
+section.news .news-container .news-box .text-box .link-box a {
   color: white;
   text-decoration: none;
   padding: 5px 10px;

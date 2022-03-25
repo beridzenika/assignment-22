@@ -12,8 +12,34 @@ class NewsModel extends Database {
         return $stm->fetchAll();
     }
 
-    public function getByCategory($categoryId) {
-        $stm = $this->connection->prepare('SELECT * FROM news WHERE category_id = :category_id');
+    public function getCount() {
+        $stm = $this->connection->query('SELECT COUNT(*) as cnt FROM `news`');
+        $stm->execute();
+        return $stm->fetch();
+    }
+
+    public function getByPaging($offset, $limit) {
+        $stm = $this->connection->query('SELECT * 
+                                           FROM news 
+                                       ORDER BY id DESC
+                                          LIMIT '.$limit.' 
+                                         OFFSET '.$offset);
+        $stm->execute();
+
+        return $stm->fetchAll();
+    }
+
+    public function getFiltered($categoryId,$keyword){
+        $whereQuery = '';
+
+        if ($keyword) {
+                $whereQuery .= 'AND text LIKE "%'.$keyword.'%" OR title LIKE "%'.$keyword.'%"';
+        }
+        
+        $stm = $this->connection->prepare('SELECT * FROM news   
+                                                   WHERE category_id = :category_id 
+                                                   '.$whereQuery.'
+                                                   ORDER BY id DESC');
         $stm->bindParam('category_id', $categoryId);
         $stm->execute();
         return $stm->fetchAll();
