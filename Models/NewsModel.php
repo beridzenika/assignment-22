@@ -22,26 +22,53 @@ class NewsModel extends Database {
         $stm = $this->connection->query('SELECT * 
                                            FROM news 
                                        ORDER BY id DESC
-                                          LIMIT '.$limit.' 
-                                         OFFSET '.$offset);
+                                          LIMIT '.$limit.' OFFSET '.$offset);
         $stm->execute();
 
         return $stm->fetchAll();
     }
 
-    public function getFiltered($categoryId,$keyword){
+    public function getFilteredCnt($categoryId, $keyword,){
         $whereQuery = '';
+        if($categoryId) {
+            $whereQuery = 'WHERE category_id = '.$categoryId;
+        }
 
-        if ($keyword) {
-                $whereQuery .= 'AND text LIKE "%'.$keyword.'%" OR title LIKE "%'.$keyword.'%"';
+        if($keyword) {
+            if($whereQuery) {
+                $whereQuery .= ' AND (title LIKE "%'.$keyword.'%" OR text LIKE "%'.$keyword.'%") ';
+            } else {
+                $whereQuery .= ' WHERE title LIKE "%'.$keyword.'%" OR text LIKE "%'.$keyword.'%" ';
+            }
         }
         
-        $stm = $this->connection->prepare('SELECT * FROM news   
-                                                   WHERE category_id = :category_id 
-                                                   '.$whereQuery.'
-                                                   ORDER BY id DESC');
-        $stm->bindParam('category_id', $categoryId);
+        $stm = $this->connection->query('SELECT COUNT(*) as cnt
+                                           FROM news 
+                                          '.$whereQuery);
         $stm->execute();
+
+        return $stm->fetch();
+    }
+
+    public function getFiltered($categoryId, $keyword, $offset, $limit){
+        $whereQuery = '';
+        if($categoryId) {
+            $whereQuery = 'WHERE category_id = '.$categoryId;
+        }
+
+        if($keyword) {
+            if($whereQuery) {
+                $whereQuery .= ' AND (title LIKE "%'.$keyword.'%" OR text LIKE "%'.$keyword.'%") ';
+            }
+        }
+        
+        $stm = $this->connection->query('SELECT * 
+                                           FROM news 
+                                          '.$whereQuery.'
+                                       ORDER BY id DESC
+                                       LIMIT '.$limit.' OFFSET '.$offset);
+        $stm->execute();
+
         return $stm->fetchAll();
     }
 

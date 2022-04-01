@@ -12,7 +12,7 @@ section.news .news-container .filter form .filter-box input {
   border: solid 1px #DADADA;
 }
 
-section.news .news-container .filter form .filter-box button {
+section.news .news-container .filter form .filter-box button, .paging a {
   padding: 10px;
   border-radius: 5px;
   color: white;
@@ -205,5 +205,19 @@ section.about .text-container {
   border-top: solid 2px #CC0000;
   margin: 20px 0 50px;
   text-align: justify;
+}
+
+.paging {
+  text-align: center;
+  margin: 20px;
+}
+
+.paging a {
+  text-decoration: none;
+  background-color: #DADADA;
+}
+
+.paging a.active {
+  background-color: #CC0000;
 }
 /*# sourceMappingURL=style.css.map */

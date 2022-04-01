@@ -5,6 +5,7 @@ namespace Pages\Admin;
 use Pages\Admin\Page;
 use Models\NewsModel;
 use Models\CategoriesModel;
+use Helpers\Paging;
 
 class News extends Page {
     protected $newsModel;
@@ -23,9 +24,7 @@ class News extends Page {
         
         $cnt = $this->newsModel->getCount();
 
-        $this->data['page'] = $page;
-        $this->data['limit'] = $limit;
-        $this->data['cnt'] = $cnt['cnt'];
+        $this->data['paging'] = Paging::execute($cnt['cnt'], $limit, $page, '?type=admin&page=news');
         $this->data['news'] = $this->newsModel->getByPaging($offset, $limit);
 
         $this->load('views/admin/news/index.php');

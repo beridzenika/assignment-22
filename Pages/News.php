@@ -4,6 +4,7 @@ namespace Pages;
 
 use Models\CategoriesModel;
 use Models\NewsModel;
+use Helpers\Paging;
 
 class News extends Page{
     protected $categoriesModel;
@@ -15,16 +16,27 @@ class News extends Page{
     }
 
     public function index() {
-        $page = isset($_GET['p']) && $_GET['p'] > 0 ? $_GET['p'] : 1 ;
-        $limit = 5;
-        $offset = ($page - 1) * $limit;
 
         $categoryId = isset($_GET['category']) && $_GET['category'] ? $_GET['category'] : null;
         $keyword = isset($_GET['keyword']) && $_GET['keyword'] ? $_GET['keyword'] : null;
 
+        $page = isset($_GET['p']) && $_GET['p'] > 0 ? $_GET['p'] : 1 ;
+        $limit = 5;
+        $offset = ($page - 1) * $limit;
+
+        $cnt = $this->newsModel->getFilteredCnt($categoryId, $keyword);
+
+        $this->data['page'] = $page;
+        $this->data['limit'] = $limit;
+        $this->data['cnt'] = $cnt['cnt'];
+
+        $this->data['paging'] = Paging::execute($cnt['cnt'], $limit, $page, '?page=news');
+
+        $this->data['news'] = $this->newsModel->getFiltered($categoryId, $keyword, $offset, $limit);
         $this->data['categories'] = $this->categoriesModel->getCategories();
-        $this->data['news'] = $this->newsModel->getFiltered($categoryId, $keyword);
-        
+        $this->data['keyword'] = $keyword;
+        $this->data['categoryId'] = $categoryId;
+
         $this->load('views/frontend/news/index.php');
     }
 

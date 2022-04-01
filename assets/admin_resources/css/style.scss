@@ -172,17 +172,17 @@ body{
                 }
             }
         }
-        .paging{
-            text-align: center;
-            margin: 20px;
-            a{
-                text-decoration: none;
-                @extend %form-button;
-            }
-            a.active{
-                background-color: $primary-color;
-            }
+    }
+    
+    .paging{
+        text-align: center;
+        margin: 20px;
+        a{
+            text-decoration: none;
+            @extend %form-button;
+        }
+        a.active{
+            background-color: $primary-color;
         }
     }
-
 }

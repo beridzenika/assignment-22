@@ -24,5 +24,6 @@
             </div>
         </div>
 <?php } ?>
+    <?= $data['paging'] ?>
     </div>
 </section>

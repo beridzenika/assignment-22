@@ -198,3 +198,16 @@ section.about{
         text-align: justify;
     }
 }
+
+.paging{
+    text-align: center;
+    margin: 20px;
+    a{
+        text-decoration: none;
+        @extend %form-button;
+        background-color: $gray-color;
+    }
+    a.active{
+        background-color: $primary-color;
+    }
+}
