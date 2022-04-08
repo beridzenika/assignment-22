@@ -12,7 +12,13 @@ $gray-color:#DADADA;
     display: inline-block;
 }
 
-
+%form-box{
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin: 10% auto 0;
+    display: inline-block;
+    border-radius: 5px;
+}
 %form-input{
     padding: 10px;
     border-radius: 5px;
@@ -79,6 +85,7 @@ section{
     padding: 10px 10%;
     display: flex;
     justify-content: space-between;
+    
     .video-container{
         width: 71%;
         h1{
@@ -187,18 +194,45 @@ section.news{
 
 section.about{
     display: block;
-    .header-container{
-        h1{
-            font-size: 48px;
-        }
-    }
+    
     .text-container{
         border-top: solid 2px $primary-color;
         margin: 20px 0 50px;
         text-align: justify;
     }
 }
-
+section.contact{
+    display: block;
+    margin: auto;
+    .header-container{
+        h1{
+            font-size: 48px;
+        }
+    }
+    form{
+        margin-top: 10px;
+        .form-group{
+            margin: 10px 0;
+            label{
+                display: block;
+                margin-bottom: 10px;
+            }
+            input, textarea{
+                width: 100%;
+                @extend %form-input;
+            }
+            button{
+                width: 100%;
+                @extend %form-button;
+            }
+            &.error{
+                input, textarea{
+                    border: 1px solid $primary-color;
+                }
+            }
+        }
+    }
+}
 .paging{
     text-align: center;
     margin: 20px;

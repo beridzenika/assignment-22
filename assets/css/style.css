@@ -6,13 +6,13 @@ section .video-container .video-box .text-box, section .news-container .news-box
   display: inline-block;
 }
 
-section.news .news-container .filter form .filter-box input {
+section.news .news-container .filter form .filter-box input, section.contact form .form-group input, section.contact form .form-group textarea {
   padding: 10px;
   border-radius: 5px;
   border: solid 1px #DADADA;
 }
 
-section.news .news-container .filter form .filter-box button, .paging a {
+section.news .news-container .filter form .filter-box button, section.contact form .form-group button, .paging a {
   padding: 10px;
   border-radius: 5px;
   color: white;
@@ -197,14 +197,44 @@ section.about {
   display: block;
 }
 
-section.about .header-container h1 {
-  font-size: 48px;
-}
-
 section.about .text-container {
   border-top: solid 2px #CC0000;
   margin: 20px 0 50px;
   text-align: justify;
+}
+
+section.contact {
+  display: block;
+  margin: auto;
+}
+
+section.contact .header-container h1 {
+  font-size: 48px;
+}
+
+section.contact form {
+  margin-top: 10px;
+}
+
+section.contact form .form-group {
+  margin: 10px 0;
+}
+
+section.contact form .form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+section.contact form .form-group input, section.contact form .form-group textarea {
+  width: 100%;
+}
+
+section.contact form .form-group button {
+  width: 100%;
+}
+
+section.contact form .form-group.error input, section.contact form .form-group.error textarea {
+  border: 1px solid #CC0000;
 }
 
 .paging {
