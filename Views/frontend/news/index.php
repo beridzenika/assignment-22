@@ -3,7 +3,10 @@
 
         <div class="filter">
             <form action="">
+                
                 <input type="hidden" name="page" value="news">
+                <input type="hidden" name="category" value="<?= $_GET['category'] ?>">
+                
                 <div class="filter-box">
                     <input type="text" name="keyword" placeholder="search">
                 </div>

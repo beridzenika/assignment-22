@@ -13,6 +13,7 @@ class News extends Page{
     function __construct() {
         $this->categoriesModel = new CategoriesModel();
         $this->newsModel = new NewsModel();
+        Parent::__construct();
     }
 
     public function index() {
@@ -26,11 +27,9 @@ class News extends Page{
 
         $cnt = $this->newsModel->getFilteredCnt($categoryId, $keyword);
 
-        $this->data['page'] = $page;
-        $this->data['limit'] = $limit;
-        $this->data['cnt'] = $cnt['cnt'];
+        $link = '?page=news' . ($categoryId ? '&category='.$categoryId : '') . ($keyword ? '&keyword='.$keyword : '');
 
-        $this->data['paging'] = Paging::execute($cnt['cnt'], $limit, $page, '?page=news');
+        $this->data['paging'] = Paging::execute($cnt['cnt'], $limit, $page, $link);
 
         $this->data['news'] = $this->newsModel->getFiltered($categoryId, $keyword, $offset, $limit);
         $this->data['categories'] = $this->categoriesModel->getCategories();

@@ -15,6 +15,9 @@
             <li>
                 <a href="?page=about" <?= $pageName == 'about' ? 'class="active"' : '' ?> >About</a>
             </li>
+            <li>
+                <a href="?page=contact" <?= $pageName == 'contact' ? 'class="active"' : '' ?> >contact</a>
+            </li>
         </ul>
         <div class="login-btn">
             <a href="?type=admin&page=login">Log in</a>

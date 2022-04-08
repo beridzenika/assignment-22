@@ -1,4 +1,3 @@
-
 <div class="paging">
 <?php 
     $pageCnt = ceil($data['cnt'] / $data['limit']);
